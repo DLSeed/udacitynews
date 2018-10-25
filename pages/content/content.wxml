@@ -1,0 +1,16 @@
+<!--pages/content/content.wxml-->
+<view class="news-warpper" >
+    <view class="news-title">{{title}}</view>
+    <view class='news-subtitle'>
+    <view class="news-source">{{source}}   {{date}}</view>
+     <view class="news-readCount">{{readCount}}</view>
+     </view>
+    </view>
+<view class='news-content' wx:for="{{news_content}}">
+<view wx:if="{{item.type=='image'}}"class="news-img"  >
+<image src="{{item.src}}" class="news-img" mode="widthFix"></image></view>
+    <view wx:if="{{item.type=='strong'}}" class="news-bigtext" >
+    <p class="news-bigtext">{{item.text}}</p></view>
+     <view wx:if="{{item.type=='p'}}" class="news-text" >
+    <p class="news-text">{{item.text}}</p></view>
+</view>

@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<scroll-view scroll-x >
+  <view class='news-column'>
+    <view class="news-item" wx:for="{{news_type}}" >
+    <view wx:if="{{item=='gn'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">国内</view>
+    <view wx:if="{{item=='gj'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">国际</view>
+    <view wx:if="{{item=='cj'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">财经</view>
+    <view wx:if="{{item=='yl'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">娱乐</view>
+    <view wx:if="{{item=='js'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">军事</view>
+    <view wx:if="{{item=='ty'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">体育</view>
+    <view wx:if="{{item=='other'}}"class="type-title" id="{{item}}" bindtap='onTapListNews' style="font-weight:{{titleFontWeightMap[item]}};opacity:{{titleFontOpacityMap[item]}}">其他</view>
+    </view>
+</view>
+</scroll-view>
+
+<view class='part-item' wx:for="{{news_list}}">
+<view wx:if="{{item.sn!='0'}}" class="news-warpper" bindtap='onTapReadNews' id="{{item.id}}">
+    <view class="news-title">{{item.title}}</view>
+    <view class="news-abs">{{item.source}}   {{item.date}}</view>
+    </view>
+    <view wx:if="{{item.sn!='0'}}" class="news-warpper-img">
+       <image  class="news-img" src="{{item.firstImage}}" onerror="this.src='/images/default.png'"></image>
+      </view>
+    <view wx:if="{{item.sn=='0'}}" class="news-full" bindtap='onTapReadNews' id="{{item.id}}">
+    <image  class="news-full-img" src="{{item.firstImage}}" mode="widthFix" onerror="this.src='/images/default.png'"></image>
+    <view class="news-title">{{item.title}}</view>
+    <view class="news-abs">{{item.source}}   {{item.date}}</view>
+    
+    </view>
+    
+</view>

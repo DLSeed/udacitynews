@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/content/content"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "优达新闻",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}
